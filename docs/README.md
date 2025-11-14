@@ -8,7 +8,7 @@ A complete Remote Spy with an incredible parser that captures incoming and outgo
 ## Loadstring
 ```lua
 --// Sigma Spy @depso
-loadstring(game:HttpGet("https://raw.githubusercontent.com/depthso/Sigma-Spy/refs/heads/main/Main.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/0xfinder/Sigma-Spy/refs/heads/main/Main.lua"))()
 ```
 
 ## Notices 🔔
