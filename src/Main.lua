@@ -3,7 +3,7 @@ local Configuration = {
 	UseWorkspace = false, 
 	NoActors = false,
 	FolderName = "Sigma Spy",
-	RepoUrl = "https://raw.githubusercontent.com/0xfinder/Sigma-Spy/refs/heads/main",
+	RepoUrl = "https://raw.githubusercontent.com/x7dJJ9vnFH23/Shi-Spy/refs/heads/main",
 	ParserUrl = "https://raw.githubusercontent.com/depthso/Roblox-parser/refs/heads/main/dist/Main.luau"
 }
 
