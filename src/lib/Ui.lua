@@ -1,10 +1,5 @@
 local Ui = {
-	DefaultEditorContent = [=[--[[
-	Sigma Spy, written by depso
-	Hooks rewritten and many more fixes!
-
-	Discord: https://discord.gg/bkUkm2vSbv
-]]]=],
+	DefaultEditorContent = [=[--[[ Shit Spy]]]=],
 	LogLimit = 100,
     SeasonLabels = { 
         January = "⛄ %s ⛄", 
@@ -25,7 +20,7 @@ local Ui = {
 		["Desktop"] = UDim2.fromOffset(600, 400),
 	},
     BaseConfig = {
-        Theme = "SigmaSpy",
+        Theme = "DarkTheme",
         NoScroll = true,
     },
 	OptionTypes = {
@@ -74,7 +69,7 @@ type Log = {
 local SetClipboard = setclipboard or toclipboard or set_clipboard
 
 --// Libraries
-local ReGui = loadstring(game:HttpGet('https://github.com/depthso/Dear-ReGui/raw/refs/heads/main/ReGui.lua'), "ReGui")()
+local ReGui = loadstring(game:HttpGet('https://github.com/x7dJJ9vnFH23/Dear-ReGui/raw/refs/heads/main/ReGui.lua'), "ReGui")()
 
 --// Modules
 local Flags
