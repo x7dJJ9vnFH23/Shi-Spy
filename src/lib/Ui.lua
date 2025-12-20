@@ -272,7 +272,7 @@ function Ui:ShowModal(Lines: table)
 
 	--// Modal Window
 	local ModalWindow = Window:PopupModal({
-		Title = "Sigma Spy"
+		Title = "Shi Spy"
 	})
 	ModalWindow:Label({
 		Text = Message,
@@ -289,7 +289,7 @@ end
 
 function Ui:ShowUnsupportedExecutor(Name: string)
 	Ui:ShowModal({
-		"Unfortunately Sigma Spy is not supported on your executor",
+		"Unfortunately Shi Spy is not supported on your executor",
 		"The best free option is Swift (discord.gg/getswiftgg)",
 		`\nYour executor: {Name}`
 	})
@@ -297,7 +297,7 @@ end
 
 function Ui:ShowUnsupported(FuncName: string)
 	Ui:ShowModal({
-		"Unfortunately Sigma Spy is not supported on your executor",
+		"Unfortunately Shi Spy is not supported on your executor",
 		`\nMissing function: {FuncName}`
 	})
 end
@@ -397,7 +397,7 @@ function Ui:DisplayAura()
     local AURADELAY = Rand:NextInteger(1, 5)
 
 	--// Title
-	local Title = `Sigma Spy | AURA: {AURA}`
+	local Title = `Shi Spy | Straightness: {AURA}`
 	local Seasonal = self:TurnSeasonal(Title)
     Window:SetTitle(Seasonal)
 
@@ -580,9 +580,9 @@ function Ui:AddDetailsSection(OptionsTab)
 	OptionsTab:Separator({Text="Information"})
 	OptionsTab:BulletText({
 		Rows = {
-			"Sigma spy - Written by depso!",
+			"Shi Spy - Written by No One",
 			"Libraries: Roblox-Parser, Dear-ReGui",
-			"Thank you syn.lua for suggesting I make this"
+			"Thank you God for suggesting I make this"
 		}
 	})
 end
@@ -810,8 +810,8 @@ function Ui:MakeTableHeaders(Table, Rows: table)
 end
 
 function Ui:Decompile(Editor: table, Script: Script)
-	local Header = "--BOOIIII THIS IS SO TUFF FLIPPY SKIBIDI AURA (SIGMA SPY)"
-	Editor:SetText("--Decompiling... +9999999 AURA (mango phonk)")
+	local Header = "--BOOIIII THIS IS SO TUFF FLIPPY SKIBIDI AURA (SHI SPY)"
+	Editor:SetText("--Decompiling... +9999999 Straightness (wish i knew scp)")
 
 	--// Decompile script
 	local Decompiled, IsError = Process:Decompile(Script)
