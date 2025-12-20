@@ -20,7 +20,7 @@ local Ui = {
 		["Desktop"] = UDim2.fromOffset(600, 400),
 	},
     BaseConfig = {
-        Theme = "DarkTheme",
+        Theme = "SigmaSpy",
         NoScroll = true,
     },
 	OptionTypes = {
