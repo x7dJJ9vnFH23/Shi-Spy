@@ -1,5 +1,10 @@
 local Ui = {
-	DefaultEditorContent = [=[--[[ Shit Spy]]]=],
+	DefaultEditorContent = [=[--[[
+	Sigma Spy, written by depso
+	Hooks rewritten and many more fixes!
+
+	Discord: https://discord.gg/bkUkm2vSbv
+]]]=],
 	LogLimit = 100,
     SeasonLabels = { 
         January = "⛄ %s ⛄", 
@@ -20,7 +25,7 @@ local Ui = {
 		["Desktop"] = UDim2.fromOffset(600, 400),
 	},
     BaseConfig = {
-        Theme = "DarkTheme",
+        Theme = "SigmaSpy",
         NoScroll = true,
     },
 	OptionTypes = {
@@ -99,7 +104,7 @@ function Ui:Init(Data)
 	Communication = Modules.Communication
 	Files = Modules.Files
 
-	--// ReGui
+	--// 
 	self:LoadFont()
 	self:LoadReGui()
 	self:CheckScale()
@@ -164,7 +169,7 @@ function Ui:LoadReGui()
 	ThemeConfig.TextFont = TextFont
 
 	--// ReGui
-	ReGui:DefineTheme("DarkTheme", ThemeConfig)
+	ReGui:DefineTheme("SigmaSpy", ThemeConfig)
 end
 
 type CreateButtons = {
@@ -272,7 +277,7 @@ function Ui:ShowModal(Lines: table)
 
 	--// Modal Window
 	local ModalWindow = Window:PopupModal({
-		Title = "Shi Spy"
+		Title = "Sigma Spy"
 	})
 	ModalWindow:Label({
 		Text = Message,
@@ -289,7 +294,7 @@ end
 
 function Ui:ShowUnsupportedExecutor(Name: string)
 	Ui:ShowModal({
-		"Unfortunately Shi Spy is not supported on your executor",
+		"Unfortunately Sigma Spy is not supported on your executor",
 		"The best free option is Swift (discord.gg/getswiftgg)",
 		`\nYour executor: {Name}`
 	})
@@ -297,7 +302,7 @@ end
 
 function Ui:ShowUnsupported(FuncName: string)
 	Ui:ShowModal({
-		"Unfortunately Shi Spy is not supported on your executor",
+		"Unfortunately Sigma Spy is not supported on your executor",
 		`\nMissing function: {FuncName}`
 	})
 end
@@ -397,7 +402,7 @@ function Ui:DisplayAura()
     local AURADELAY = Rand:NextInteger(1, 5)
 
 	--// Title
-	local Title = `Shi Spy | Straightness: {AURA}`
+	local Title = `Sigma Spy | AURA: {AURA}`
 	local Seasonal = self:TurnSeasonal(Title)
     Window:SetTitle(Seasonal)
 
@@ -580,9 +585,9 @@ function Ui:AddDetailsSection(OptionsTab)
 	OptionsTab:Separator({Text="Information"})
 	OptionsTab:BulletText({
 		Rows = {
-			"Shi Spy - Written by No One",
+			"Sigma spy - Written sby depso!",
 			"Libraries: Roblox-Parser, Dear-ReGui",
-			"Thank you God for suggesting I make this"
+			"Thank you syn.lua for suggesting I make this"
 		}
 	})
 end
@@ -810,8 +815,8 @@ function Ui:MakeTableHeaders(Table, Rows: table)
 end
 
 function Ui:Decompile(Editor: table, Script: Script)
-	local Header = "--BOOIIII THIS IS SO TUFF FLIPPY SKIBIDI AURA (SHI SPY)"
-	Editor:SetText("--Decompiling... +9999999 Straightness (wish i knew scp)")
+	local Header = "--BOOIIII THIS IS SO TUFF FLIPPY SKIBIDI AURA (SIGMA SPY)"
+	Editor:SetText("--Decompiling... +9999999 AURA (mango phonk)")
 
 	--// Decompile script
 	local Decompiled, IsError = Process:Decompile(Script)
