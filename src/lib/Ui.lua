@@ -20,7 +20,7 @@ local Ui = {
 		["Desktop"] = UDim2.fromOffset(600, 400),
 	},
     BaseConfig = {
-        Theme = "SigmaSpy",
+        Theme = "DarkTheme",
         NoScroll = true,
     },
 	OptionTypes = {
@@ -164,7 +164,7 @@ function Ui:LoadReGui()
 	ThemeConfig.TextFont = TextFont
 
 	--// ReGui
-	ReGui:DefineTheme("SigmaSpy", ThemeConfig)
+	ReGui:DefineTheme("DarkTheme", ThemeConfig)
 end
 
 type CreateButtons = {
