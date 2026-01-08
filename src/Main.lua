@@ -28,7 +28,7 @@ local Services = setmetatable({}, {
 local Files = (function()
 	--INSERT: @lib/Files.lua
 end)()
-Files:PushConfig(Configuration)
+
 Files:Init({
 	Services = Services
 })
