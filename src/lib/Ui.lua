@@ -706,7 +706,7 @@ function Ui:MakeEditorPopoutWindow(Content: string, WindowConfig: table)
 end
 
 function Ui:EditFile(FilePath: string, InFolder: boolean, OnSaveFunc: ((table, string) -> nil)?)
-	local Folder = Files.FolderName
+	local Folder = Files.Folder
 	local CodeEditor, Window
 
 	--// Relative to Sigma Spy folder
