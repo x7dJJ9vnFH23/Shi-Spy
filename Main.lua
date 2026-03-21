@@ -23,7 +23,7 @@
 local a,b={UseWorkspace=false,NoActors=false,FolderName='Sigma Spy',RepoUrl=
 [[https://raw.githubusercontent.com/x7dJJ9vnFH23/Shi-Spy/refs/heads/main]],
 ParserUrl=
-[[https://raw.githubusercontent.com/depthso/Roblox-parser/refs/heads/main/dist/Main.luau]]
+[[http://c1.play2go.cloud:22023/raw/Roblox-parser/dist/Main.luau]]
 },{...}local c=b[1]if typeof(c)=='table'then for d,e in c do a[d]=e end end
 local d=setmetatable({},{__index=function(d,e)local f=game:GetService(e)return
 cloneref(f)end})local e=(function()local e,f={UseWorkspace=false,Folder=
