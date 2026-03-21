@@ -6,7 +6,7 @@ type table = {
 local Files = {
 	UseWorkspace = false,
 	Folder = "Sigma spy",
-	RepoUrl = "https://github.com/SUNRTX22/ReGui-reup/blob/main/uicomeback",
+	RepoUrl = "https://github.com/Awakenchan/Dear-ReGui/blob/main/src/Init.lua",
 	FolderStructure = {
 		["Sigma Spy"] = {
 			"assets",
