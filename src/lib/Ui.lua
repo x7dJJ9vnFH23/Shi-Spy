@@ -254,10 +254,6 @@ function Ui:CreateMainWindow()
 	local Window = self:CreateWindow()
 	self.Window = Window
 
-	--// Check if the font was successfully downloaded
-	self:FontWasSuccessful()
-	self:AuraCounterService()
-
 	--// UiVisible flag callback
 	Flags:SetFlagCallback("UiVisible", function(self, Visible)
 		Window:SetVisible(Visible)
