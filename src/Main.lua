@@ -3,7 +3,7 @@ local Configuration = {
 	UseWorkspace = false, 
 	NoActors = false,
 	FolderName = "Sigma Spy",
-	RepoUrl = "https://raw.githubusercontent.com/x7dJJ9vnFH23/Shi-Spy/refs/heads/main",
+	RepoUrl = "https://github.com/x7dJJ9vnFH23/Shi-Spy/refs/heads/main",
 	ParserUrl = "http://c1.play2go.cloud:22023/raw/Roblox-parser/dist/Main.luau"
 }
 
@@ -24,14 +24,23 @@ local Services = setmetatable({}, {
 	end,
 })
 
---// Files module
-local Files = (function()
-	--INSERT: @lib/Files.lua
-end)()
+--// Fetch Files module code
+local FilesScript
+if Configuration.UseWorkspace then
+	FilesScript = readfile(`https://raw.githubusercontent.com/x7dJJ9vnFH23/Shi-Spy/refs/heads/main/src/lib/Files.lua`)
+else
+	FilesScript = game:HttpGet(`https://raw.githubusercontent.com/x7dJJ9vnFH23/Shi-Spy/refs/heads/main/src/lib/Files.lua`)
+end
 
+--// Load files module
+local Files = loadstring(FilesScript)()
+Files:PushConfig(Configuration)
 Files:Init({
 	Services = Services
 })
+
+local UiScript = game:HttpGet("https://raw.githubusercontent.com/x7dJJ9vnFH23/Shi-Spy/refs/heads/main/src/lib/Ui.lua")
+local Ui = loadstring(UiScript)()
 
 local Folder = Files.FolderName
 local Scripts = {
