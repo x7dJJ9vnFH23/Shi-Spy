@@ -216,35 +216,33 @@ type AskConfig = {
 	Options: table
 }
 function Ui:AskUser(Config: AskConfig): string
-	local Window = self.Window
-	local Answered = false
+    local Window = self.Window
+    local Answered = false
 
-	--// Create modal
-	local ModalWindow = Window:PopupModal({
-		Title = Config.Title
-	})
-	ModalWindow:Label({
-		Text = table.concat(Config.Content, "\n"),
-		TextWrapped = true
-	})
-	ModalWindow:Separator()
+    local ModalWindow = Window:PopupModal({
+        Title = Config.Title
+    })
+    ModalWindow:Label({
+        Text = table.concat(Config.Content, "\n"),
+        TextWrapped = true
+    })
+    ModalWindow:Separator()
 
-	--// Answers
-	local Row = ModalWindow:Row({
-		Expanded = true
-	})
-	for _, Answer in next, Config.Options do
-		Row:Button({
-			Text = Answer,
-			Callback = function()
-				Answered = Answer
-				ModalWindow:ClosePopup()
-			end,
-		})
-	end
+    local Row = ModalWindow:Row({
+        Expanded = true
+    })
+    for _, Answer in next, Config.Options do
+        Row:Button({
+            Text = Answer,
+            Callback = function()
+                Answered = Answer
+                ModalWindow:ClosePopup()
+            end,
+        })
+    end
 
-	repeat wait() until Answered
-	return Answered
+    repeat task.wait() until Answered
+    return Answered
 end
 
 function Ui:CreateMainWindow()
