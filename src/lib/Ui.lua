@@ -197,19 +197,16 @@ function Ui:CreateButtons(Parent, Data: CreateButtons)
 end
 
 function Ui:CreateWindow(WindowConfig)
-    local BaseConfig = self.BaseConfig
+	local BaseConfig = self.BaseConfig
 	local Config = Process:DeepCloneTable(BaseConfig)
-	Process:Merge(Config, WindowConfig)
+	Process:Merge(Config, WindowConfig or {})  -- guard nil WindowConfig
 
-	--// Create Window
 	local Window = ReGui:Window(Config)
 
-	--// Switch to DarkTheme instead of the ImGui theme if the font cannot be loaded
 	if not FontSuccess then 
 		Window:SetTheme("DarkTheme")
 	end
 	
-	--// Create Window
 	return Window
 end
 
