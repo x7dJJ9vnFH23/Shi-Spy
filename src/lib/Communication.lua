@@ -55,11 +55,12 @@ function CommWrapper:ProcessQueue()
 end
 
 function CommWrapper:BeginQueueService()
-    coroutine.wrap(function()
-        while wait() do
+    task.spawn(function()
+        while true do
+            task.wait()
             self:ProcessQueue()
         end
-    end)()
+    end)
 end
 
 function Module:NewCommWrap(Channel: BindableEvent)
@@ -219,10 +220,9 @@ function Module:ConsolePrint(...)
 end
 
 function Module:QueueLog(Data)
-    spawn(function()
+    task.spawn(function()
         local SerializedArgs = self:SerializeTable(Data.Args)
         Data.Args = SerializedArgs
-
         self:Communicate("QueueLog", Data)
     end)
 end
