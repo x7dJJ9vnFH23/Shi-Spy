@@ -73,7 +73,7 @@ type Log = {
 local SetClipboard = setclipboard or toclipboard or set_clipboard
 
 --// Libraries
-local ReGui = loadstring(game:Get('https://raw.githubusercontent.com/Awakenchan/Dear-ReGui/refs/heads/main/ReGui.lua'), "ReGui")()
+local ReGui = loadstring(game:HttpGet('https://raw.githubusercontent.com/Awakenchan/Dear-ReGui/refs/heads/main/ReGui.lua'), "ReGui")()
 
 --// Modules
 local Flags
