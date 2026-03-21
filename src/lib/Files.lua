@@ -244,11 +244,11 @@ end
 
 function Files:CompileModule(Scripts): string
     local Out = "local Libraries = {"
-    for Name, Content in Scripts do
-		if typeof(Content) ~= "string" then continue end
+    for Name, Content in next, Scripts do
+        if typeof(Content) ~= "string" then continue end
         Out ..= `	{Name} = (function()\n{Content}\nend)(),\n`
     end
-	Out ..= "}"
+    Out ..= "}"
     return Out
 end
 
