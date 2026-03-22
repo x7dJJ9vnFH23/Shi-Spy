@@ -82,11 +82,13 @@ function Generation:Init(Data: table)
 	Flags = Modules.Flags
 	
 	--// Import parser
+	self.ParserReady = false
 	local ParserUrl = Configuration.ParserUrl
 	self:LoadParser(ParserUrl)
 end
 
 function Generation:MakePrintable(String: string): string
+	if not ParserModule then return String end
 	local Formatter = ParserModule.Modules.Formatter
 	return Formatter:MakePrintable(String)
 end
@@ -116,7 +118,6 @@ function Generation:LoadParser(ModuleUrl: string)
     for _, Url in next, Urls do
         local Ok, Source = pcall(game.HttpGet, game, Url)
         if not Ok or not Source or #Source < 10 then 
-            warn("Parser URL failed:", Url)
             continue 
         end
 
@@ -136,6 +137,7 @@ function Generation:LoadParser(ModuleUrl: string)
 end
 
 function Generation:MakeValueSwapsTable(): table
+	if not ParserModule then return {} end
 	local Formatter = ParserModule.Modules.Formatter
 	return Formatter:MakeReplacements()
 end
