@@ -337,7 +337,7 @@ function Process:FindCallingLClosure(Offset: number)
 
         --// Check if the stack level is valid
         local IsValid = debug.info(Offset, "l") ~= -1
-        if not IsValid then continue end
+        if not IsValid then return end
 
         --// Check if the function is valid
         local Function = debug.info(Offset, "f")
