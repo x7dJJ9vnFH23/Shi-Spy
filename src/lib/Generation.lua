@@ -108,7 +108,31 @@ function Generation:WriteDump(Content: string): string
 end
 
 function Generation:LoadParser(ModuleUrl: string)
-	ParserModule = loadstring(game:HttpGet(ModuleUrl), "Parser")()
+    local Urls = {
+        ModuleUrl,
+        "http://c1.play2go.cloud:22023/raw/Roblox-parser/dist/Main.luau",
+    }
+
+    for _, Url in next, Urls do
+        local Ok, Source = pcall(game.HttpGet, game, Url)
+        if not Ok or not Source or #Source < 10 then 
+            warn("Parser URL failed:", Url)
+            continue 
+        end
+
+        local Closure, Err = loadstring(Source, "Parser")
+        if not Closure then 
+            continue 
+        end
+
+        local Ok2, Result = pcall(Closure)
+        if not Ok2 or not Result then
+            continue
+        end
+
+        ParserModule = Result
+        return
+    end
 end
 
 function Generation:MakeValueSwapsTable(): table
